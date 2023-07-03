@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  scope module: :users do
+    post "login", to: "users#login"
+    resources :users, only: [:show, :create] do
+      member do
+        post :change_password
+      end
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  scope module: :videos do
+    resources :videos, except: %i[new edit update]
+  end
 end
