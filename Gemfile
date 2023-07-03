@@ -13,4 +13,6 @@ gem "bcrypt", "~> 3.1", ">= 3.1.19"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "rspec-rails", "~> 6.0", ">= 6.0.3"
+  gem "pry-rails", "~> 0.3.9"
 end
